@@ -1,0 +1,157 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Basit Cosmetics — Makeup & Skincare</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <h1>Basit Cosmetics</h1>
+        <p class="tag">Natural · Affordable · Beauty</p>
+      </div>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="menu">☰</button>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <h2>Khubsurti har roz — Basit Cosmetics</h2>
+        <p>High-quality cosmetics & skincare — Pakistan friendly prices. Free delivery on orders above PKR 3000.</p>
+        <a class="btn" href="#products">Shop Now</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=1200&q=80&auto=format&fit=crop" alt="cosmetics collection">
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <section id="products" class="products">
+      <h2>Popular Products</h2>
+      <p class="section-sub">Makeup & skincare favorites — updated frequently.</p>
+
+      <div class="product-grid">
+        <!-- Product 1 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1583336663375-10d5f6e1c2f1?w=800&q=60&auto=format&fit=crop" alt="Lipstick">
+          <div class="card-body">
+            <h3>Matte Lipstick</h3>
+            <p class="price">PKR 999</p>
+            <p class="desc">Long-lasting matte lipstick — available in 8 shades.</p>
+            <div class="card-actions">
+              <button class="btn small">Add to Cart</button>
+              <button class="btn outline small">Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&q=60&auto=format&fit=crop" alt="Foundation">
+          <div class="card-body">
+            <h3>Liquid Foundation</h3>
+            <p class="price">PKR 1,499</p>
+            <p class="desc">Buildable coverage, for all skin types.</p>
+            <div class="card-actions">
+              <button class="btn small">Add to Cart</button>
+              <button class="btn outline small">Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1600180758890-9e1b2c1d7f47?w=800&q=60&auto=format&fit=crop" alt="Face cream">
+          <div class="card-body">
+            <h3>Hydrating Face Cream</h3>
+            <p class="price">PKR 1,199</p>
+            <p class="desc">Daily moisturizer with SPF 15 and hyaluronic acid.</p>
+            <div class="card-actions">
+              <button class="btn small">Add to Cart</button>
+              <button class="btn outline small">Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 4 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800&q=60&auto=format&fit=crop" alt="Perfume">
+          <div class="card-body">
+            <h3>Signature Perfume</h3>
+            <p class="price">PKR 2,499</p>
+            <p class="desc">Long-lasting scent — 50ml bottle.</p>
+            <div class="card-actions">
+              <button class="btn small">Add to Cart</button>
+              <button class="btn outline small">Details</button>
+            </div>
+          </div>
+        </article>
+      </div> <!-- product-grid -->
+    </section>
+
+    <section id="about" class="about">
+      <h2>About Us</h2>
+      <p>Basit Cosmetics is local Pakistani brand providing cruelty-free, skin-friendly cosmetics. Our mission: affordable beauty for everyone.</p>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact & Orders</h2>
+      <p>Email: <a href="mailto:basit@example.com">basit@example.com</a> • WhatsApp: +92-300-0000000</p>
+
+      <!-- Simple contact form (works with Formspree or similar) -->
+      <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+        <label>
+          Name
+          <input type="text" name="name" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="_replyto" required>
+        </label>
+        <label>
+          Message / Order details
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+
+      <p class="small">Tip: replace the form action with your Formspree endpoint (free) or Getform endpoint.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span id="year"></span> Basit Cosmetics — Made with ♥ by Abdul Basit</p>
+      <p class="small">Follow us on: Instagram • Facebook • TikTok</p>
+    </div>
+  </footer>
+
+  <script>
+    // small JS for mobile menu toggle and dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+
+    // simple submit feedback
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', (e) => {
+      // let default occur (Formspree will handle). You can add custom messages here.
+      // Example: show a small alert on submit:
+      setTimeout(()=> alert('Thanks! Your message has been sent.'), 100);
+    });
+  </script>
+</body>
+</html>
